@@ -1,7 +1,26 @@
 <%- include('../partials/header') %>
 
-<button class="btn btn-primary">
-  <a href="/posts/new">Add New Post</a>
-</button>
+<div class="container">
+  <button class="btn btn-primary mt-2">
+    <a href="/posts/new">Add New Post</a>
+  </button>
+  <br />
+
+  <div class="row">
+    <div class="col">
+      <% post.forEach(function(p) { %>
+      <div class="card mt-3">
+        <div class="card-header text-center">
+          <h4><%= p.title %></h4>
+        </div>
+        <div class="card-body">
+          <p><%= p.desc %></p>
+          <p>By: <%= p.user[0].name %></p>
+        </div>
+      </div>
+      <% }) %>
+    </div>
+  </div>
+</div>
 
 <%- include('../partials/footer') %>

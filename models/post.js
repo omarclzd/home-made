@@ -5,7 +5,8 @@ var postSchema = new Schema(
   {
     title: String,
     desc: String,
-    phone: String
+
+    user: []
   },
   {
     timestamps: true
