@@ -4,8 +4,15 @@ const Post = require("../models/post");
 module.exports = {
   index,
   new: newPost,
-  create
+  create,
+  profile
 };
+
+function profile(req, res) {
+  User.findById(req.params.id, (err, user) => {
+    res.render("posts/profile", { user: req.user });
+  });
+}
 
 function newPost(req, res) {
   User.findById(req.params.id, (err, user) => {

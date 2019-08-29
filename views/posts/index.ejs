@@ -7,9 +7,9 @@
   <br />
 
   <div class="row">
+    <% post.forEach(function(p) { %>
     <div class="col">
-      <% post.forEach(function(p) { %>
-      <div class="card mt-3">
+      <div class="shadow card mt-3">
         <div class="card-header text-center">
           <h4><%= p.title %></h4>
         </div>
@@ -18,8 +18,8 @@
           <p>By: <%= p.user[0].name %></p>
         </div>
       </div>
-      <% }) %>
     </div>
+    <% }) %>
   </div>
 </div>
 
